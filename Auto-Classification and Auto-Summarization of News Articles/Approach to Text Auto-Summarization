@@ -1,0 +1,19 @@
+Steps for Text Auto-Summarization:
+    1. Downloading the contents of the URL
+    2. Extracting the article text itself, from all the other HTML in the page
+        - BeautifulSoup
+    3. Figuring out the 3 most important sentences from the entire text
+        -NLTK
+        
+Approach to finding the 3 most important sentences:
+    1. Find most commonly occuring words in an article
+    2. Find the sentence in which these most commonly occuring words appear
+    3. This will be one of our important sentence
+    
+    
+Steps to Figure out the 3 most important sentences:
+    1. Eliminating Stopwords
+    2. Finding the term frequency of the remaining words
+    3. Rank importance of a word by the frequency with which it appears
+    4. Find a score of importance for each sentence based on the important words that appear in it (Sum of frequencies of Words in a sentence)
+    5. Rank the sentences by these scores
