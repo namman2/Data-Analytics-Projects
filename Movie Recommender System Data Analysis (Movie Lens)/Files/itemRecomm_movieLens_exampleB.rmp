@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process version="7.0.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="6.0.002" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="6.0.003" expanded="true" height="68" name="Read CSV" width="90" x="45" y="30">
+        <parameter key="csv_file" value="C:\Users\Chiku\Desktop\1. Industrial Engineering\Data Mining\Assignments\Assignment 5\Supporting Files\uaTrg.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="false"/>
+        <list key="annotations">
+          <parameter key="0" value="Name"/>
+        </list>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="user.true.integer.attribute"/>
+          <parameter key="1" value="item.true.integer.attribute"/>
+          <parameter key="2" value="rating.true.integer.label"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="datamanagement" value="double_array"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="7.0.001" expanded="true" height="82" name="Set Role" width="90" x="179" y="30">
+        <parameter key="attribute_name" value="rating"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="user" value="user identification"/>
+          <parameter key="item" value="item identification"/>
+        </list>
+      </operator>
+      <operator activated="false" class="irbrecommender:user_item_baseline" compatibility="5.1.001" expanded="true" height="82" name="User Item Baseline" width="90" x="782" y="187">
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+        <parameter key="num_iter" value="10"/>
+        <parameter key="reg_u" value="3.0"/>
+        <parameter key="reg_i" value="5.0"/>
+      </operator>
+      <operator activated="true" class="read_csv" compatibility="6.0.003" expanded="true" height="68" name="Read CSV (2)" width="90" x="45" y="345">
+        <parameter key="csv_file" value="C:\Users\Chiku\Desktop\1. Industrial Engineering\Data Mining\Assignments\Assignment 5\Supporting Files\uaTst.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="false"/>
+        <list key="annotations">
+          <parameter key="0" value="Name"/>
+        </list>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="user.true.integer.attribute"/>
+          <parameter key="1" value="item.true.integer.attribute"/>
+          <parameter key="2" value="rating.true.integer.label"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="datamanagement" value="double_array"/>
+      </operator>
+      <operator activated="false" class="read_csv" compatibility="7.0.001" expanded="true" height="68" name="Read CSV (3)" width="90" x="112" y="952">
+        <parameter key="csv_file" value="C:\Users\Chiku\Desktop\1. Industrial Engineering\Data Mining\Assignments\Assignment 5\Supporting Files\uaTrg.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="false"/>
+        <list key="annotations">
+          <parameter key="0" value="Name"/>
+        </list>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="user.true.integer.attribute"/>
+          <parameter key="1" value="item.true.integer.attribute"/>
+          <parameter key="2" value="rating.true.integer.label"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="datamanagement" value="double_array"/>
+      </operator>
+      <operator activated="false" class="read_csv" compatibility="7.0.001" expanded="true" height="68" name="Read CSV (4)" width="90" x="581" y="1200">
+        <parameter key="csv_file" value="C:\Users\Chiku\Desktop\1. Industrial Engineering\Data Mining\Assignments\Assignment 5\Supporting Files\u_item.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="false"/>
+        <list key="annotations">
+          <parameter key="0" value="Name"/>
+        </list>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="movie id.true.integer.id"/>
+          <parameter key="1" value="movie title.true.polynominal.attribute"/>
+          <parameter key="2" value="release date .true.polynominal.attribute"/>
+          <parameter key="3" value="att4.true.attribute_value.attribute"/>
+          <parameter key="4" value="IMDb URL.true.polynominal.attribute"/>
+          <parameter key="5" value="unknown.true.binominal.attribute"/>
+          <parameter key="6" value="Action.true.binominal.attribute"/>
+          <parameter key="7" value="Adventure.true.binominal.attribute"/>
+          <parameter key="8" value="Animation.true.binominal.attribute"/>
+          <parameter key="9" value="Children's.true.binominal.attribute"/>
+          <parameter key="10" value="Comedy.true.binominal.attribute"/>
+          <parameter key="11" value="Crime.true.binominal.attribute"/>
+          <parameter key="12" value="Documentary.true.binominal.attribute"/>
+          <parameter key="13" value="Drama.true.binominal.attribute"/>
+          <parameter key="14" value="Fantasy.true.binominal.attribute"/>
+          <parameter key="15" value="Film-Noir.true.binominal.attribute"/>
+          <parameter key="16" value="Horror.true.binominal.attribute"/>
+          <parameter key="17" value="Musical.true.binominal.attribute"/>
+          <parameter key="18" value="Mystery.true.binominal.attribute"/>
+          <parameter key="19" value="Romance.true.binominal.attribute"/>
+          <parameter key="20" value="Sci-Fi.true.binominal.attribute"/>
+          <parameter key="21" value="Thriller.true.binominal.attribute"/>
+          <parameter key="22" value="War.true.binominal.attribute"/>
+          <parameter key="23" value="Western.true.binominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="datamanagement" value="double_array"/>
+      </operator>
+      <operator activated="false" class="read_csv" compatibility="7.0.001" expanded="true" height="68" name="Read CSV (5)" width="90" x="648" y="1054">
+        <parameter key="csv_file" value="C:\Users\Chiku\Desktop\1. Industrial Engineering\Data Mining\Assignments\Assignment 5\Supporting Files\u_user.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="false"/>
+        <list key="annotations">
+          <parameter key="0" value="Name"/>
+        </list>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="userID.true.integer.id"/>
+          <parameter key="1" value="age.true.integer.attribute"/>
+          <parameter key="2" value="gender.true.polynominal.attribute"/>
+          <parameter key="3" value="occupation.true.polynominal.attribute"/>
+          <parameter key="4" value="zip.true.polynominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="datamanagement" value="double_array"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="7.0.001" expanded="true" height="82" name="Set Role (2)" width="90" x="179" y="345">
+        <parameter key="attribute_name" value="rating"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="user" value="user identification"/>
+          <parameter key="item" value="item identification"/>
+        </list>
+      </operator>
+      <operator activated="false" class="set_role" compatibility="7.0.001" expanded="true" height="82" name="Set Role (4)" width="90" x="112" y="1054">
+        <parameter key="attribute_name" value="rating"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="user" value="user identification"/>
+          <parameter key="item" value="item identification"/>
+        </list>
+      </operator>
+      <operator activated="false" class="multiply" compatibility="7.0.001" expanded="true" height="103" name="Multiply (3)" width="90" x="246" y="1065"/>
+      <operator activated="false" class="aggregate" compatibility="6.0.006" expanded="true" height="82" name="Item Aggregate (2)" width="90" x="447" y="1105">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="rating" value="average"/>
+          <parameter key="user" value="count"/>
+        </list>
+        <parameter key="group_by_attributes" value="item"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="join" compatibility="7.0.001" expanded="true" height="82" name="Join (2)" width="90" x="782" y="1156">
+        <parameter key="remove_double_attributes" value="true"/>
+        <parameter key="join_type" value="inner"/>
+        <parameter key="use_id_attribute_as_key" value="false"/>
+        <list key="key_attributes">
+          <parameter key="item" value="movie id"/>
+        </list>
+        <parameter key="keep_both_join_attributes" value="false"/>
+      </operator>
+      <operator activated="false" class="multiply" compatibility="7.0.001" expanded="true" height="418" name="Multiply (4)" width="90" x="916" y="1156"/>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Western" width="90" x="179" y="1309">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Western" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Western"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="War" width="90" x="313" y="1513">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="War" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="War"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Thriller" width="90" x="313" y="1411">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Thriller" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Thriller"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Sci-Fi" width="90" x="313" y="1309">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Sci-Fi" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Sci-Fi"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Romance" width="90" x="447" y="1513">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Romance" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Romance"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Mystery" width="90" x="447" y="1411">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Mystery" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Mystery"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Musical" width="90" x="447" y="1309">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Musical" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Musical"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Horror" width="90" x="581" y="1513">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Horror" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Horror"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Film-noir" width="90" x="581" y="1411">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Film-Noir" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Film-Noir"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Fantasy" width="90" x="581" y="1309">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Fantasy" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Fantasy"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Documentary" width="90" x="715" y="1513">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Documentary" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Documentary"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Crime" width="90" x="715" y="1411">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Crime" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Crime"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Childrens" width="90" x="715" y="1309">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Children's" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Children's"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Animation" width="90" x="1050" y="1564">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Animation" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Animation"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Adventure" width="90" x="1050" y="1462">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Adventure" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Adventure"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Action" width="90" x="1050" y="1360">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Action" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Action"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Comedy" width="90" x="1050" y="1258">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Comedy" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Comedy"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Drama" width="90" x="1050" y="1156">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Drama" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Drama"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="User Aggregate" width="90" x="447" y="1003">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="rating" value="average"/>
+          <parameter key="item" value="count"/>
+        </list>
+        <parameter key="group_by_attributes" value="user"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="join" compatibility="7.0.001" expanded="true" height="82" name="Join" width="90" x="782" y="1003">
+        <parameter key="remove_double_attributes" value="true"/>
+        <parameter key="join_type" value="inner"/>
+        <parameter key="use_id_attribute_as_key" value="false"/>
+        <list key="key_attributes">
+          <parameter key="user" value="userID"/>
+        </list>
+        <parameter key="keep_both_join_attributes" value="false"/>
+      </operator>
+      <operator activated="false" class="generate_attributes" compatibility="7.0.001" expanded="true" height="82" name="Generate Attributes (3)" width="90" x="916" y="1003">
+        <list key="function_descriptions">
+          <parameter key="Under20" value="if(age&lt;20,1,0)"/>
+          <parameter key="20to30" value="if(age&gt;=20 &amp;&amp; age&lt;30, 1, 0)"/>
+          <parameter key="30to40" value="if(age&gt;=30 &amp;&amp; age&lt;40, 1, 0)"/>
+          <parameter key="40to50" value="if(age&gt;=40 &amp;&amp; age&lt;50, 1, 0)"/>
+          <parameter key="50to60" value="if(age&gt;=50 &amp;&amp; age&lt;60, 1, 0)"/>
+          <parameter key="60andAbove" value="if(age&gt;=60, 1, 0)"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="false" class="multiply" compatibility="7.0.001" expanded="true" height="187" name="Multiply (5)" width="90" x="1050" y="952"/>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="60andAbove" width="90" x="1318" y="1360">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="60andAbove" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="60andAbove"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="50to60" width="90" x="1318" y="1258">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="50to60" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="50to60"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="40to50" width="90" x="1318" y="1156">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="40to50" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="40to50"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="30to40" width="90" x="1318" y="1054">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="30to40" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="30to40"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="20to30" width="90" x="1318" y="952">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="20to30" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="20to30"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="Under20" width="90" x="1318" y="850">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="Under20" value="count"/>
+          <parameter key="average(rating)" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="Under20"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="false" class="irbrecommender:global_average" compatibility="5.1.001" expanded="true" height="82" name="Global Average" width="90" x="782" y="85">
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+      </operator>
+      <operator activated="true" class="irbrecommender:user_k-NN_rp" compatibility="5.1.001" expanded="true" height="82" name="User k-NN" width="90" x="313" y="34">
+        <parameter key="k" value="25"/>
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+        <parameter key="Correlation mode" value="pearson"/>
+        <parameter key="reg_u" value="10.0"/>
+        <parameter key="reg_i" value="5.0"/>
+        <parameter key="schrinkage" value="10.0"/>
+      </operator>
+      <operator activated="false" class="irbrecommender:matrix_factorization" compatibility="5.1.001" expanded="true" height="82" name="MF" width="90" x="916" y="85">
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+        <parameter key="Num Factors" value="5"/>
+        <parameter key="Learn rate" value="0.01"/>
+        <parameter key="Iteration number" value="30"/>
+        <parameter key="Regularization" value="0.03"/>
+        <parameter key="Initial mean" value="0.0"/>
+        <parameter key="Initial stdev" value="0.1"/>
+      </operator>
+      <operator activated="false" class="irbrecommender:item_k-NN_rp" compatibility="5.1.001" expanded="true" height="82" name="Item k-NN" width="90" x="916" y="187">
+        <parameter key="k" value="25"/>
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+        <parameter key="reg_u" value="10.0"/>
+        <parameter key="reg_i" value="5.0"/>
+        <parameter key="schrinkage" value="10.0"/>
+        <parameter key="Correlation mode" value="pearson"/>
+      </operator>
+      <operator activated="true" class="irbrecommender:apply_model_rp" compatibility="5.1.001" expanded="true" height="82" name="Apply Model (2)" width="90" x="179" y="165">
+        <parameter key="Online updates" value="false"/>
+      </operator>
+      <operator activated="true" class="irbrecommender:apply_model_rp" compatibility="5.1.001" expanded="true" height="82" name="Apply Model" width="90" x="313" y="345">
+        <parameter key="Online updates" value="false"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="7.0.001" expanded="true" height="124" name="Multiply" width="90" x="447" y="345"/>
+      <operator activated="true" class="generate_attributes" compatibility="7.0.001" expanded="true" height="82" name="Generate Attributes (4)" width="90" x="581" y="391">
+        <list key="function_descriptions">
+          <parameter key="error" value="prediction-rating"/>
+          <parameter key="sq_errror" value="pow(prediction-rating,2)"/>
+          <parameter key="abs" value="abs(prediction-rating)"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="7.0.001" expanded="true" height="103" name="Multiply (6)" width="90" x="715" y="391"/>
+      <operator activated="true" class="aggregate" compatibility="6.0.006" expanded="true" height="82" name="Item Aggregate (3)" width="90" x="849" y="493">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="abs" value="average"/>
+          <parameter key="error" value="average"/>
+          <parameter key="sq_errror" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="item"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="true" class="aggregate" compatibility="7.0.001" expanded="true" height="82" name="User Aggregate (2)" width="90" x="849" y="391">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="abs" value="average"/>
+          <parameter key="error" value="average"/>
+          <parameter key="sq_errror" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="user"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="true" class="generate_attributes" compatibility="7.0.001" expanded="true" height="82" name="Generate Attributes (2)" width="90" x="179" y="595">
+        <list key="function_descriptions">
+          <parameter key="actual" value="if(rating&gt;=4,&quot;Yes&quot;,&quot;No&quot;)"/>
+          <parameter key="recommend" value="if(prediction&gt;=3.415,&quot;Yes&quot;,&quot;No&quot;)"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="irbrecommender:performance_rating_prediction" compatibility="5.1.001" expanded="true" height="82" name="Test Performance" width="90" x="715" y="289">
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="7.0.001" expanded="true" height="124" name="Multiply (2)" width="90" x="313" y="165"/>
+      <operator activated="true" class="generate_attributes" compatibility="7.0.001" expanded="true" height="82" name="Generate Attributes" width="90" x="514" y="238">
+        <list key="function_descriptions">
+          <parameter key="error" value="prediction-rating"/>
+          <parameter key="sq_errror" value="pow(prediction-rating,2)"/>
+          <parameter key="abs" value="abs(prediction-rating)"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="aggregate" compatibility="6.0.006" expanded="true" height="82" name="Aggregate (3)" width="90" x="581" y="85">
+        <parameter key="use_default_aggregation" value="false"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default_aggregation_function" value="average"/>
+        <list key="aggregation_attributes">
+          <parameter key="prediction" value="average"/>
+          <parameter key="rating" value="average"/>
+        </list>
+        <parameter key="group_by_attributes" value="|user"/>
+        <parameter key="count_all_combinations" value="false"/>
+        <parameter key="only_distinct" value="false"/>
+        <parameter key="ignore_missings" value="true"/>
+      </operator>
+      <operator activated="true" class="irbrecommender:performance_rating_prediction" compatibility="5.1.001" expanded="true" height="82" name="Training Performance" width="90" x="447" y="136">
+        <parameter key="Min Rating" value="1"/>
+        <parameter key="Range" value="4"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="7.0.001" expanded="true" height="82" name="Set Role (3)" width="90" x="313" y="595">
+        <parameter key="attribute_name" value="actual"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="recommend" value="prediction"/>
+          <parameter key="item" value="regular"/>
+          <parameter key="user" value="regular"/>
+          <parameter key="prediction" value="regular"/>
+        </list>
+      </operator>
+      <operator activated="true" class="performance_classification" compatibility="7.0.001" expanded="true" height="82" name="Performance (3)" width="90" x="447" y="570">
+        <parameter key="main_criterion" value="first"/>
+        <parameter key="accuracy" value="true"/>
+        <parameter key="classification_error" value="false"/>
+        <parameter key="kappa" value="false"/>
+        <parameter key="weighted_mean_recall" value="false"/>
+        <parameter key="weighted_mean_precision" value="false"/>
+        <parameter key="spearman_rho" value="false"/>
+        <parameter key="kendall_tau" value="false"/>
+        <parameter key="absolute_error" value="false"/>
+        <parameter key="relative_error" value="false"/>
+        <parameter key="relative_error_lenient" value="false"/>
+        <parameter key="relative_error_strict" value="false"/>
+        <parameter key="normalized_absolute_error" value="false"/>
+        <parameter key="root_mean_squared_error" value="false"/>
+        <parameter key="root_relative_squared_error" value="false"/>
+        <parameter key="squared_error" value="false"/>
+        <parameter key="correlation" value="false"/>
+        <parameter key="squared_correlation" value="false"/>
+        <parameter key="cross-entropy" value="false"/>
+        <parameter key="margin" value="false"/>
+        <parameter key="soft_margin_loss" value="false"/>
+        <parameter key="logistic_loss" value="false"/>
+        <parameter key="skip_undefined_labels" value="true"/>
+        <parameter key="use_example_weights" value="true"/>
+        <list key="class_weights"/>
+      </operator>
+      <connect from_op="Read CSV" from_port="output" to_op="Set Role" to_port="example set input"/>
+      <connect from_op="Set Role" from_port="example set output" to_op="User k-NN" to_port="example set"/>
+      <connect from_op="Read CSV (2)" from_port="output" to_op="Set Role (2)" to_port="example set input"/>
+      <connect from_op="Read CSV (3)" from_port="output" to_op="Set Role (4)" to_port="example set input"/>
+      <connect from_op="Read CSV (4)" from_port="output" to_op="Join (2)" to_port="right"/>
+      <connect from_op="Read CSV (5)" from_port="output" to_op="Join" to_port="right"/>
+      <connect from_op="Set Role (2)" from_port="example set output" to_op="Apply Model" to_port="query set"/>
+      <connect from_op="Set Role (4)" from_port="example set output" to_op="Multiply (3)" to_port="input"/>
+      <connect from_op="Multiply (3)" from_port="output 1" to_op="User Aggregate" to_port="example set input"/>
+      <connect from_op="Multiply (3)" from_port="output 2" to_op="Item Aggregate (2)" to_port="example set input"/>
+      <connect from_op="Item Aggregate (2)" from_port="example set output" to_op="Join (2)" to_port="left"/>
+      <connect from_op="Multiply (4)" from_port="output 1" to_op="Drama" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 2" to_op="Comedy" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 3" to_op="Action" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 4" to_op="Adventure" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 5" to_op="Animation" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 6" to_op="Childrens" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 7" to_op="Crime" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 8" to_op="Documentary" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 9" to_op="Fantasy" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 10" to_op="Horror" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 11" to_op="Musical" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 12" to_op="Mystery" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 13" to_op="Romance" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 14" to_op="Sci-Fi" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 15" to_op="Thriller" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 16" to_op="War" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 17" to_op="Western" to_port="example set input"/>
+      <connect from_op="User Aggregate" from_port="example set output" to_op="Join" to_port="left"/>
+      <connect from_op="Generate Attributes (3)" from_port="example set output" to_op="Multiply (5)" to_port="input"/>
+      <connect from_op="Multiply (5)" from_port="output 1" to_op="Under20" to_port="example set input"/>
+      <connect from_op="Multiply (5)" from_port="output 2" to_op="20to30" to_port="example set input"/>
+      <connect from_op="Multiply (5)" from_port="output 3" to_op="30to40" to_port="example set input"/>
+      <connect from_op="Multiply (5)" from_port="output 4" to_op="40to50" to_port="example set input"/>
+      <connect from_op="Multiply (5)" from_port="output 5" to_op="50to60" to_port="example set input"/>
+      <connect from_op="Multiply (5)" from_port="output 6" to_op="60andAbove" to_port="example set input"/>
+      <connect from_op="User k-NN" from_port="Model" to_op="Apply Model (2)" to_port="Model"/>
+      <connect from_op="User k-NN" from_port="example set" to_op="Apply Model (2)" to_port="query set"/>
+      <connect from_op="Apply Model (2)" from_port="result set" to_op="Multiply (2)" to_port="input"/>
+      <connect from_op="Apply Model (2)" from_port="Model" to_op="Apply Model" to_port="Model"/>
+      <connect from_op="Apply Model" from_port="result set" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_op="Test Performance" to_port="predictions"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Generate Attributes (2)" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 3" to_op="Generate Attributes (4)" to_port="example set input"/>
+      <connect from_op="Generate Attributes (4)" from_port="example set output" to_op="Multiply (6)" to_port="input"/>
+      <connect from_op="Multiply (6)" from_port="output 1" to_op="User Aggregate (2)" to_port="example set input"/>
+      <connect from_op="Multiply (6)" from_port="output 2" to_op="Item Aggregate (3)" to_port="example set input"/>
+      <connect from_op="Generate Attributes (2)" from_port="example set output" to_op="Set Role (3)" to_port="example set input"/>
+      <connect from_op="Multiply (2)" from_port="output 1" to_op="Training Performance" to_port="predictions"/>
+      <connect from_op="Multiply (2)" from_port="output 2" to_op="Aggregate (3)" to_port="example set input"/>
+      <connect from_op="Multiply (2)" from_port="output 3" to_op="Generate Attributes" to_port="example set input"/>
+      <connect from_op="Set Role (3)" from_port="example set output" to_op="Performance (3)" to_port="labelled data"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <description align="center" color="yellow" colored="false" height="185" resized="true" width="420" x="139" y="510">Actual and Recommendation for Test data&lt;br/&gt;Ques. 3</description>
+      <description align="center" color="yellow" colored="false" height="327" resized="true" width="967" x="77" y="948">Item and User Details&lt;br/&gt;</description>
+    </process>
+  </operator>
+</process>
